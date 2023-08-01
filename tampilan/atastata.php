@@ -312,19 +312,29 @@ die("Anda Belum Login Silahkan Login Terlebih Dahulu");
                             <span>Data Pegawai</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="data_lpd.php">
-                            <i class="material-icons">book</i>
-                            <span>Laporan Perjalanan Dinas</span>
+                    <!-- <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">notifications</i>
+                            <span>Data Rekap Status Surat</span>
                         </a>
-                    </li>
-                    <li>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="lpd.php">Status LPD</a>
+                            </li>
+                            <li>
+                                <a href="sppd.php">Status SPPD</a>
+                            </li>
+                            <li>
+                                <a href="spt.php">Status SPT</a>
+                            </li>
+                        </ul>
+                     </li> --><!-- 
+                     <li>
                         <a href="lokasi.php">
                             <i class="material-icons">location_on</i>
                             <span>Data Lokasi</span>
                         </a>
-                    </li>
-
+                    </li> -->
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">email</i>
@@ -335,13 +345,13 @@ die("Anda Belum Login Silahkan Login Terlebih Dahulu");
                                 <a href="input_sppd.php">Input SPPD</a>
                             </li>
                             <li>
-                                <a href="cetak_sppd.php">Cetak SPPD</a>
+                                <a href="cetak_sppd.php">Edit SPPD</a>
                             </li>
                             <li>
                                 <a href="input_spt.php">Input SPT</a>
                             </li>
                             <li>
-                                <a href="cetak_spt.php">Cetak SPT</a>
+                                <a href="cetak_spt.php">Edit SPT</a>
                             </li>
                         </ul>
                      </li>
@@ -350,7 +360,7 @@ die("Anda Belum Login Silahkan Login Terlebih Dahulu");
                             <i class="material-icons">assignment</i>
                             <span>Revisi Surat</span>
                         </a>
-                    </li>
+                    </li><!-- 
                       <li>
                         <a href="up_sppd.php">
                             <i class="material-icons">file_upload</i>
@@ -362,7 +372,7 @@ die("Anda Belum Login Silahkan Login Terlebih Dahulu");
                             <i class="material-icons">file_upload</i>
                             <span>Upload SPT</span>
                         </a>
-                    </li>
+                    </li> -->
                      <li><a href="../logout.php" onclick="return confirm('Apakah anda akan keluar?');"><i class="material-icons">input</i>
                      <span>Keluar</span> 
                     </a></li>

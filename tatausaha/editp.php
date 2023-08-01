@@ -18,8 +18,8 @@ include '../tampilan/atastata.php';
                             </ul>
                         </div>
                           <?php
-                    $query = mysql_query("SELECT * FROM pegawai WHERE nip='$_GET[kd]'");
-                    $data  = mysql_fetch_array($query);
+                    $query = mysqli_query($conn, "SELECT * FROM pegawai WHERE nip='$_GET[kd]'");
+                    $data  = mysqli_fetch_array($query);
                         ?>
                         <div class="body">
                             <form id="form_validation" action="updatep.php" method="POST">

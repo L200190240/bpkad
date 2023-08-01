@@ -14,7 +14,7 @@ include '../tampilan/ataspegawai.php';
                             <i class="material-icons">email</i>
                         </div>
                         <div class="content">
-                            <div class="text">Data Laporan Perjalanan Dinas</div>
+                            <div class="text">Rekapitulasi Surat Perjalanan Dinas</div>
                             <h4> <?php
                         $username=$_SESSION['username'];    
                         $sql = "SELECT * FROM  lpd, pegawai where lpd.nip=pegawai.nip";

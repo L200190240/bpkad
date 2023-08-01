@@ -1,5 +1,5 @@
 <?php 
-include '../tampilan/ataspimpin.php';
+include '../tampilan/atastata.php';
 ?>
 
     <section class="content">

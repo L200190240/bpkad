@@ -28,6 +28,7 @@ Cari Data :&nbsp;<input name='qcari' class="form-control" type="text" placeholde
                                 <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                     <thead>
                                         <tr><th>No</th> 
+                                            <th>No.Surat</th>
                                             <th>Pejabat yang memberi perintah</th>
                                             <th>Nama Pegawai yang diperintah</th>
                                             <th>Pangkat dan Golongan</th>
@@ -59,6 +60,7 @@ while($rows=mysqli_fetch_object($result)){
             <tr>
                 <td><?php echo $no
                 ?></td>
+                <td><?php       echo $rows -> nosurat;?></td>
                 <td><?php       echo $rows -> nip;?></td>
                 <td><?php       echo $rows -> namap;?></td>
                 <td><?php       echo $rows -> golongan;?></td>

@@ -17,16 +17,26 @@ include '../tampilan/atastata.php';
                             <ul class="header-dropdown m-r--5">
                             </ul>
                         </div>
+                        <?php
+                        $query = mysqli_query($conn, "SELECT * FROM lpd WHERE id='$_GET[id]'");
+                        $data  = mysqli_fetch_array($query);
+                        ?>
                         <div class="body">
                             <form id="form_validation" action="tambah_sppd.php" method="POST">
+                              <div class="form-group form-float">
+                                    <div class="form-line">
+                                      No.Surat
+                                      <input type="text" class="form-control" name="nosurat"  id="username" placeholder="SPD/Tahun/">
+                                    </div>
+                                </div>
                                    <div class="form-group form-float">
                                     <div class="form-line">
-                                      <select  name="nip" class="form-control show-tick" onchange="changeValue(this.value)">
+                                      <select  name="nip" class="form-control show-tick" onchange="changeValue(this.value) ">
                                         <option>Pejabat yang memberi perintah</option>
                                          <?php 
                                           $result = mysqli_query($conn, "select * from pegawai where hak_akses='pimpinan'");    
                                           while ($row = mysqli_fetch_array($result)) {
-                                            echo '<option value="' . $row['nip'] . '">' . $row['nip'] . ' - '.$row['nama'].'</option>';   
+                                            echo '<option value="' . $row['nip'] . '">' . $row['nip'] . ' - '.$row['nama'].'</option>';  
                                          }      
                                          ?>    
                                       </select>
@@ -37,9 +47,11 @@ include '../tampilan/atastata.php';
                                       <select  name="namap" class="form-control show-tick" onchange="changeValue(this.value)">
                                         <option>Nama pegawai yang diperintah</option>
                                          <?php 
-                                          $result = mysqli_query($conn, "select * from pegawai where hak_akses!='pimpinan'");    
+                                          $result = mysqli_query($conn, "select * from pegawai where hak_akses!='pimpinan'");   
+                                          $jsArray = "var dtPgw = new Array();\n"; 
                                           while ($row = mysqli_fetch_array($result)) {
                                             echo '<option value="' . $row['nama'] . '">'.$row['nama'].'</option>';
+                                          $jsArray .= "dtPgw['" . $row['namap'] . "'] = {golongan:'".addslashes($row['golongan'])."', jabatan:'".addslashes($row['jabatan'])."'};\n";  
                                          }      
                                          ?>    
                                       </select>
@@ -129,10 +141,9 @@ include '../tampilan/atastata.php';
 
    <script type="text/javascript">    
     <?php echo $jsArray; ?>  
-    function changeValue(nip){  
-    document.getElementById('nm').value = dtPgw[nip].nama;  
-    document.getElementById('gol').value = dtPgw[nip].gol;
-    document.getElementById('jab').value = dtPgw[nip].jab;    
+    function changeValue(namap){   
+    document.getElementById('golongan').value = dtPgw[namap].golongan;
+    document.getElementById('jabatan').value = dtPgw[namap].jabatan;    
     };  
     </script> 
   <?php 

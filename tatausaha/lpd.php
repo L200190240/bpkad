@@ -1,19 +1,18 @@
-
 <?php 
-include '../tampilan/ataspegawai.php';
+include '../tampilan/atastata.php';
 ?>
 
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>Halaman Rekapitulasi Surat Perjalanan Dinas</h2>
+                <h2>Halaman Laporan Data Perjalanan Dinas</h2>
             </div>
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <h2>
-                               Data Rekapitulasi Surat Perjalanan Dinas
+                               Data Laporan Perjalanan Dinas
                             </h2>
                             <br>
                             <form method="post" target="_self"> 
@@ -28,12 +27,19 @@ Cari Data :&nbsp;<input name='qcari' class="form-control" type="text" placeholde
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                     <thead>
-                                        <tr><th>No</th>
+                                        <tr><th>No</th> 
                                             <th>No.Surat</th>
-                                            <th>Nama Pegawai</th>
-                                            <th>Status LPD</th>
-                                            <th>Status SPPD</th>
-                                            <th>Status SPT</th>
+                                            <th>Pejabat yang memberi perintah</th>
+                                            <th>Nama Pegawai yang diperintah</th>
+                                            <th>Pangkat dan Golongan</th>
+                                            <th>Jabatan</th>
+                                            <th>Tujuan perjalanan dinas</th>
+                                            <th>Tempat berangkat</th>
+                                            <th>Tempat tujuan</th>
+                                            <th>Lama perjalanan dinas</th>
+                                            <th>Tanggal berangkat</th>
+                                            <th>Tanggal kembali</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                       <?php
@@ -55,7 +61,16 @@ while($rows=mysqli_fetch_object($result)){
                 <td><?php echo $no
                 ?></td>
                 <td><?php       echo $rows -> nosurat;?></td>
-                <td><?php       echo $rows -> nama;?></td>
+                <td><?php       echo $rows -> nip;?></td>
+                <td><?php       echo $rows -> namap;?></td>
+                <td><?php       echo $rows -> golongan;?></td>
+                <td><?php       echo $rows -> jabatan;?></td>
+                <td><?php       echo $rows -> tujuan;?></td>
+                <td><?php       echo $rows -> angkutan;?></td>
+                <td><?php       echo $rows -> tempatb;?></td>
+                <td><?php       echo $rows -> tempatt;?></td>
+                <td><?php       echo $rows -> tglb;?></td>
+                <td><?php       echo $rows -> tglk;?></td>
                 <td><div class="button-demo">
                 <?php if($rows -> status == 'Telah Dikonfirmasi'){
                     echo "<p class='btn btn-success waves-effect'>Sudah Terkonfirmasi</p>";
@@ -63,21 +78,6 @@ while($rows=mysqli_fetch_object($result)){
                     echo '<id='.$rows->id.'" type="button" class="btn btn-primary waves-effect">Belum Terkonfirmasi</a>';
                 } ?>
                     </div>
-                </td>
-                <td><div class="button-demo">
-                    <?php if($rows -> status == 'Telah Terkonfirmasi'){
-                        echo "<p class'btn btn-success waves-effect'Sudah Terkonfirmasi</p>";
-                    } else{
-                        echo '<id='.$rows->id.'" type="button" class="btn btn-danger waves-effect">Ada Revisi</a>';
-                    }?>
-                </div>
-                <td><div class="button-demo">
-                    <?php if($rows -> status == 'Telah Terkonfirmasi'){
-                        echo "<p class'btn btn-success waves-effect'Sudah Terkonfirmasi</p>";
-                    } else{
-                        echo '<id='.$rows->id.'" type="button" class="btn btn-danger waves-effect">Ada Revisi</a>';
-                    }?>
-                </div>
                 </td>
                 </td>
             </tr>

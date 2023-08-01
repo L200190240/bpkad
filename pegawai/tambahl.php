@@ -2,21 +2,23 @@
 error_reporting(0);
 
 include "../config/koneksi.php";
-$nip          = $_POST['nip'];
+$nosurat	  = $_POST['nosurat'];
+$nip		  = $_POST['nip'];
 $nama		  = $_POST['nama'];
-$nosurat      = $_POST['nosurat'];
-$pilihan_kota = $_POST['pilihan_kota'];
-$tt 		  = $_POST['tempatt'];
-$tb			  = $_POST['tanggalb'];
-$tk 	      = $_POST['tanggalk'];
-$perihal 	  = $_POST['perihal'];
-$laporan 	  = $_POST['laporan'];
+$namap		  = $_POST['namap'];
+$golongan	  = $_POST['golongan'];
+$jabatan	  = $_POST['jabatan'];
+$tujuan	      = $_POST['tujuan'];
+$angkutan	  = $_POST['angkutan'];
+$tempatb	  = $_POST['tempatb'];
+$tempatt	  = $_POST['tempatt'];
+$tglb	      = $_POST['tglb'];
+$tglk		  = $_POST['tglk'];
 
-
-$query = mysqli_query($conn, "INSERT INTO lpd (nip,nama, nosurat, pilihan_kota, tempatt, tanggalb, tanggalk,perihal,laporan) VALUES ('$nip','$nama', '$nosurat','$pilihan_kota', '$tt', '$tb', '$tk', '$perihal', '$laporan')");
+$query = mysqli_query($conn, "INSERT INTO lpd (nosurat, nip, nama,namap, golongan, jabatan, tujuan, angkutan, tempatb, tempatt, tglb, tglk) VALUES ('$nosurat', '$nip', '$nama', '$namap', '$golongan', '$jabatan', '$tujuan', '$angkutan', '$tempatb', '$tempatt', '$tglb', '$tglk')");
 if ($query){
-	echo "<script>alert('Laporan Berhasil dimasukan!'); window.location = 'lpd.php'</script>";
+	echo "<script>alert('Laporan Berhasil dimasukan!'); window.location = '../pimpinan/lpd.php'</script>";
 } else {
-	echo "<script>alert('Laporan Gagal dimasukan!'); window.location = 'lpd.php'</script>";
+	echo "<script>alert('Laporan Gagal dimasukan!'); window.location = '../pimpinan/lpd.php'</script>";
 }
 ?>

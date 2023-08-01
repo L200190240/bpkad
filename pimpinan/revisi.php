@@ -36,16 +36,7 @@ include '../tampilan/ataspimpin.php';
             </div>
        </div>
         </div>
-    </section>
-
-   <script type="text/javascript">    
-    <?php echo $jsArray; ?>  
-    function changeValue(nip){  
-    document.getElementById('nm').value = dtPgw[nip].nama;  
-    document.getElementById('gol').value = dtPgw[nip].gol;
-    document.getElementById('jab').value = dtPgw[nip].jab;    
-    };  
-    </script> 
+    </section> 
   <?php 
 include '../tampilan/footer.php';
 ?>

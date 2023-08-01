@@ -27,14 +27,18 @@ Cari Data :&nbsp;<input name='qcari' class="form-control" type="text" placeholde
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                     <thead>
-                                        <tr><th>No</th>
-                                            <th>Nama Pegawai</th>
+                                        <tr><th>No</th> 
                                             <th>No.Surat</th>
-                                            <th>Tujuan Kab/Kota</th>
-                                            <th>Tanggal Tujuan</th>
-                                            <th>Sampai Dengan</th>
-                                            <th>Perihal</th>
-                                            <th>Laporan</th>
+                                            <th>Pejabat yang memberi perintah</th>
+                                            <th>Nama Pegawai yang diperintah</th>
+                                            <th>Pangkat dan Golongan</th>
+                                            <th>Jabatan</th>
+                                            <th>Tujuan perjalanan dinas</th>
+                                            <th>Tempat berangkat</th>
+                                            <th>Tempat tujuan</th>
+                                            <th>Lama perjalanan dinas</th>
+                                            <th>Tanggal berangkat</th>
+                                            <th>Tanggal kembali</th>
                                         </tr>
                                     </thead>
                                       <?php
@@ -55,13 +59,17 @@ while($rows=mysqli_fetch_object($result)){
             <tr>
                 <td><?php echo $no
                 ?></td>
-                <td><?php       echo $rows -> nama;?></td>
                 <td><?php       echo $rows -> nosurat;?></td>
+                <td><?php       echo $rows -> nip;?></td>
+                <td><?php       echo $rows -> namap;?></td>
+                <td><?php       echo $rows -> golongan;?></td>
+                <td><?php       echo $rows -> jabatan;?></td>
+                <td><?php       echo $rows -> tujuan;?></td>
+                <td><?php       echo $rows -> angkutan;?></td>
+                <td><?php       echo $rows -> tempatb;?></td>
                 <td><?php       echo $rows -> tempatt;?></td>
-                <td><?php       echo $rows -> tanggalb;?></td>
-                <td><?php       echo $rows -> tanggalk;?></td>
-                <td><?php       echo $rows -> perihal;?></td>
-                <td><?php       echo $rows -> laporan;?></td>
+                <td><?php       echo $rows -> tglb;?></td>
+                <td><?php       echo $rows -> tglk;?></td>
             </tr>
             <?php
 $no++;
